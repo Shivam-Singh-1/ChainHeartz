@@ -1,0 +1,837 @@
+:root {
+    --bg-dark: #121212;
+    --card-dark: #1E1E1E;
+    --text-primary: #E0E0E0;
+    --text-secondary: #A0A0A0;
+    --accent-color: #4CAF50;
+    --hover-color: #45a049;
+    --nav-spacing: 25px;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header and Navigation */
+.header {
+    background-color: #1a1a1a;
+    padding: var(--nav-spacing) 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Logo Styles with Updated Margin */
+.logo-container {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-left: var(--nav-spacing);
+}
+
+.logo {
+    height: 100%;
+    width: auto;
+}
+
+/* Navigation Links with Updated Margins */
+.nav-links {
+    display: flex;
+    gap: var(--nav-spacing);
+    align-items: center;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+}
+
+.nav-links a:last-child {
+    margin-right: var(--nav-spacing);
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: block;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: var(--nav-spacing) var(--nav-spacing) 0 var(--nav-spacing);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 24px;
+    z-index: 101;
+}
+
+.hamburger-icon {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.hamburger-line:nth-child(1) {
+    top: 0;
+}
+
+.hamburger-line:nth-child(2) {
+    top: 11px;
+}
+
+.hamburger-line:nth-child(3) {
+    bottom: 0;
+}
+
+/* Hamburger Animation States */
+.hamburger-menu:hover .hamburger-line {
+    background-color: var(--accent-color);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.hamburger-menu:hover .hamburger-line {
+    background-color: #4CAF50;
+}
+
+/* Hamburger Animation */
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .hero-heading {
+        font-size: 2.4rem;
+        margin: 100px auto 30px;
+        padding: 0 20px;
+    }
+
+    .hero-heading::after {
+        width: 80px;
+    }
+
+    @keyframes lineAppear {
+        to {
+            opacity: 1;
+            width: 150px;
+        }
+    }
+}
+/* Navigation Links with Updated Spacing */
+.nav-links {
+    display: flex;
+    gap: var(--nav-spacing);
+    align-items: center;
+    margin-right: var(--nav-spacing);
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+}
+
+.nav-links a:last-child {
+    padding-right: var(--nav-spacing);
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Heading with Improved Visibility */
+.hero-heading {
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin: 120px auto 40px;
+    max-width: 800px;
+    position: relative;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 1;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
+    transform: translateY(20px);
+    animation: headingAppear 1s ease forwards;
+    padding: 0 20px;
+}
+
+.hero-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    border-radius: 2px;
+    opacity: 0;
+    animation: lineAppear 1s ease forwards 0.5s;
+}
+
+/* Heading Animation */
+@keyframes headingAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Intro Text Styles */
+.intro-text {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 2rem auto 3rem;
+    max-width: 800px;
+    text-align: center;
+    padding: 0 20px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Modal Base Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: modalFade 0.3s ease-out;
+}
+
+.modal-content {
+    background: var(--card-dark);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h2 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: var(--accent-color);
+}
+
+/* Password Input Styling */
+.password-input-container {
+    margin: 1.5rem 0;
+}
+
+.input-icon-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.styled-input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.styled-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.lock-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+/* Submit Button */
+.submit-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--accent-color);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background: var(--hover-color);
+    transform: translateY(-1px);
+}
+
+.button-text {
+    margin-right: 0.5rem;
+}
+
+.button-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.submit-button:hover .button-icon {
+    transform: translateX(4px);
+}
+
+/* Security Note */
+.security-note {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Animations */
+@keyframes modalFade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 480px) {
+    .modal-content {
+        padding: 1.5rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .styled-input {
+        padding: 0.875rem 0.875rem 0.875rem 2.5rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 1.5rem auto 2.5rem;
+    }
+}
+/* Add these styles to the existing CSS in Version 5 */
+.donation-card {
+    background-color: var(--card-dark);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    background-color: #252525;
+    color: var(--text-primary);
+    border-radius: 5px;
+    font-size: 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.donate-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.donate-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.total-donated {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.transaction-log {
+    background-color: #252525;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 15px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.transaction-log h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+    font-size: 0.9rem;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-item .cause {
+    color: var(--accent-color);
+    max-width: 40%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.transaction-item .transaction-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.transaction-item .transaction-id {
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    margin-top: 3px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--card-dark);
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 20px 10px;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .donation-card {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .form-group select,
+    .form-group input {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .donate-btn {
+        font-size: 1rem;
+    }
+
+    .transaction-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .transaction-item .transaction-details {
+        align-items: flex-start;
+        margin-top: 5px;
+    }
+}
+
+/* Accessibility and Touch Improvements */
+@media (hover: hover) {
+    .donate-btn:hover {
+        opacity: 0.9;
+    }
+}
+
+@media (pointer: coarse) {
+    .donate-btn, 
+    nav ul li a {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.loading-overlay.active {
+    display: flex;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--text-secondary);
+    border-top: 5px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+.loading-overlay p {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+.modal-content {
+    background: var(--card-dark);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    transform: scale(0.7);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+    color: var(--accent-color);
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.modal-body {
+    margin-bottom: 1.5rem;
+}
+
+.modal-body p {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.transaction-code {
+    background: rgba(76, 175, 80, 0.1);
+    padding: 0.75rem;
+    border-radius: 5px;
+    font-family: monospace;
+    color: var(--accent-color);
+}
+
+.modal-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.modal-button:hover {
+    background-color: var(--hover-color);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+.hamburger-menu {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    width: 30px;
+    height: 4px;
+    background-color: var(--text-primary);
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: var(--card-dark);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 10px;
+}
+
+.menu-dropdown.active {
+    display: block;
+}
+
+#withdrawBtn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#withdrawBtn:hover {
+    background-color: var(--accent-color);
+}

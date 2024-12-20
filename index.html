@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChainHeartz</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-container">
+                <img src="media/Logo.png" alt="ChainHeartz" class="logo">
+            </div>
+            
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="causes.html">Causes</a>
+                <a href="#donate">Donate</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <button class="hamburger-menu">
+                <div class="hamburger-icon">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
+            </button>
+        </nav>
+    </header>
+
+    <div class="modal" id="passwordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Enter Owner Password</h2>
+                <button class="close-button" onclick="closePasswordModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="password-input-container">
+                    <div class="input-icon-wrapper">
+                        <input 
+                            type="password" 
+                            id="ownerPassword" 
+                            placeholder="Enter your password"
+                            class="styled-input"
+                        >
+                        <span class="lock-icon">🔒</span>
+                    </div>
+                    <button class="submit-button" onclick="verifyPassword()">
+                        <span class="button-text">Verify Access</span>
+                        <span class="button-icon">→</span>
+                    </button>
+                </div>
+                <p class="security-note">Please enter your owner password to access withdrawal functions.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal" id="withdrawModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Withdraw Funds</h2>
+                <button class="close-button" onclick="closeWithdrawModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Current Balance: $<span id="currentBalance">0.00</span></p>
+                <button class="modal-button" onclick="withdrawFunds()">Withdraw All Funds</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <h1 class="hero-heading">Donate for the people in need</h1>
+        <p class="intro-text">Make a real impact with your cryptocurrency! Support vital causes like education, health, environmental protection, animal welfare, and disaster relief—all with just a few clicks. Your donations empower change, ensure transparency, and help create a brighter future for those in need. Join the movement today and turn your crypto into hope and action!</p>
+        <div class="donation-card">
+            <div class="form-group">
+                <label for="causeSelect">Select a Cause</label>
+                <select id="causeSelect" required>
+                    <option value="">--Select a Cause--</option>
+                    <option value="Education">Education</option>
+                    <option value="Health">Health</option>
+                    <option value="Environment">Environment</option>
+                    <option value="Animal Welfare">Animal Welfare</option>
+                    <option value="Natural Disaster Relief">Natural Disaster Relief</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="donationAmount">Donation Amount (ETH)</label>
+                <input type="number" id="donationAmount" placeholder="Enter amount" min="0.1" step="0.01" required>
+            </div>
+            
+            <button class="donate-btn" onclick="donate()">Donate</button>
+            
+            <div id="totalDonated" class="total-donated">Total Donated: $0.00</div>
+            
+            <div class="transaction-log">
+                <h3>Recent Transactions</h3>
+                <div id="transactionList"></div>
+            </div>
+        </div>
+    </main>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <p>Processing donation...</p>
+    </div>
+    
+    <div class="modal" id="thankYouModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Thank You for Your Donation!</h2>
+                <button class="close-button" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage"></p>
+                <p id="transactionCode" class="transaction-code"></p>
+            </div>
+            <button class="modal-button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Crypto Donation Platform. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

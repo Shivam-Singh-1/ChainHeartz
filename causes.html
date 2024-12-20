@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compassion in Action: Supporting Global Causes</title>
+    <style>
+        /* Dark Theme Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem;
+            border-bottom: 2px solid #333;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #4CAF50;
+        }
+
+        /* Cause Sections */
+        .causes-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 2rem;
+        }
+
+        .cause-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+            margin: 1rem;
+            padding: 1.5rem;
+            width: 300px;
+            transition: transform 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .cause-card:hover {
+            transform: scale(1.05);
+            background-color: #2a2a2a;
+        }
+
+        .cause-card h2 {
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        /* Donation Section */
+        .donation-section {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 2rem;
+            border-top: 2px solid #333;
+        }
+
+        .donation-section h2 {
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .donation-reasons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .reason-card {
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            margin: 1rem;
+            padding: 1rem;
+            width: 250px;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+        }
+
+        /* Button Styles */
+        .donate-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .donate-button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .causes-container, .donation-reasons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Text Styles */
+        p {
+            color: #b0b0b0;
+        }
+
+        h3 {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Compassion in Action: Supporting Global Causes</h1>
+        <p>Your Donation Can Make a Difference</p>
+    </header>
+
+    <!-- Causes Section -->
+    <div class="causes-container">
+        <!-- Education Cause -->
+        <div class="cause-card">
+            <h2>Education</h2>
+            <p>Provide quality education to underprivileged children, support school infrastructure, and create learning opportunities for all.</p>
+        </div>
+
+        <!-- Health Cause -->
+        <div class="cause-card">
+            <h2>Health</h2>
+            <p>Improve healthcare access, support medical research, provide essential medical treatments, and promote preventive healthcare.</p>
+        </div>
+
+        <!-- Environmental Protection -->
+        <div class="cause-card">
+            <h2>Environmental Protection</h2>
+            <p>Combat climate change, protect endangered ecosystems, promote sustainable practices, and preserve biodiversity.</p>
+        </div>
+
+        <!-- Animal Welfare -->
+        <div class="cause-card">
+            <h2>Animal Welfare</h2>
+            <p>Protect animals from cruelty, support wildlife conservation, provide shelter for abandoned animals, and promote ethical treatment.</p>
+        </div>
+
+        <!-- Disaster Relief -->
+        <div class="cause-card">
+            <h2>Disaster Relief</h2>
+            <p>Provide immediate aid during natural disasters, support recovery efforts, supply food, water, and medical assistance to affected communities.</p>
+        </div>
+    </div>
+
+    <!-- Donation Section -->
+    <section class="donation-section">
+        <h2>Why Should You Donate?</h2>
+        <div class="donation-reasons">
+            <div class="reason-card">
+                <h3>Global Impact</h3>
+                <p>Your contribution helps create meaningful change worldwide.</p>
+            </div>
+            <div class="reason-card">
+                <h3>Personal Fulfillment</h3>
+                <p>Experience the joy of making a difference in someone's life.</p>
+            </div>
+            <div class="reason-card">
+                <h3>Collective Power</h3>
+                <p>Small donations combine to create significant transformations.</p>
+            </div>
+        </div>
+        <a href="index.html" class="donate-button">Donate Now</a>
+    </section>
+</body>
+</html>
